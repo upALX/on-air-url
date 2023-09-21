@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import chalk from 'chalk';
 
-const textRandom = "blablalbal[Custom containers](https://github.com/markdown-it/markdown-it-container)sdadassdsa Third paragraph of definition 2 [Definition lists](https://github.com/markdown-it/markdown-it-deflist)"
+//const textRandom = "blablalbal[Custom containers](https://github.com/markdown-it/markdown-it-container)sdadassdsa Third paragraph of definition 2 [Definition lists](https://github.com/markdown-it/markdown-it-deflist)"
 
 
 
@@ -20,16 +20,11 @@ async function getLinksFromText(filePath){
 
         const textFromFile = await fs.promises.readFile(filePath, encoding)
 
-        console.log('TYPE OF CONTENT FILE: ', typeof(textFromFile))
-
-        return  getUrlLinks(textFromFile)
-
-   
+        return getUrlLinks(textFromFile)
        
     }catch(error){
         treatErrors(error, filePath)
     }
-
 }
 
 function getUrlLinks(text){
